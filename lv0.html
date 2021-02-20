@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首字母大写</title>
+    <script>
+        var str = 'today is a happy day';
+        function change(str) {
+            var arr = str.split(' ');
+            var newArr = [];  
+            for (var i = 0; i < arr.length; i++) {
+                var char = arr[i];
+                newArr.push(char.slice(0,1 ).toUpperCase() + char.slice(1));
+            }console.log(arr);
+            return newArr;
+        }
+        var str1 = change(str).join('  ');
+        console.log(str1); 
+    
+    </script>
+</head>
+
+<body>
+
+</body>
+
+<ml>

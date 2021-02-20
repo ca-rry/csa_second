@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>找出重复出现次数最多的元素</title>
+    <script>
+    str='ABCDEEF,GHJKKM';               
+    function getmaxObj(str) {
+    var newObj = {};
+    for (var i = 0; i < str.length; i++) {
+        if (!newObj[str.charAt(i)])
+            newObj[str.charAt(i)] = 1;
+        else
+            newObj[str.charAt(i)] += 1;
+    }
+    var maxObj ={
+        maxkey :[],
+        maxvalue:0
+    }
+    for (var k in newObj) {
+        if (newObj[k] > maxObj.maxvalue) {
+            maxObj.maxvalue = newObj[k];
+            var m='';
+            for(var j=0;j<maxObj.maxvalue;j++)
+            {
+                m=m+k;
+            }
+            maxObj.maxkey = [m];
+        }else if(newObj[k] === maxObj.maxvalue)
+         {
+         var n='';
+         for(var x=0;x<maxObj.maxvalue;x++)
+            {
+                n=n+k;
+            }
+            maxObj.maxkey.push(n); 
+        }
+    }
+    return maxObj; 
+}
+console.log(getmaxObj(str));
+    </script>
+</head>
+<body>  
+</body>
+</html>
